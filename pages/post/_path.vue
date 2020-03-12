@@ -27,7 +27,7 @@ export default {
   },
   asyncData(context) {
     console.log(context.params.path)
-    return firestore.getDoc("posts/gDoV6radhkPgedVEm7fv");
+    return firestore.getPost("posts/gDoV6radhkPgedVEm7fv");
   },
   created() {
     console.log(this.post);

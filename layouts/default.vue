@@ -52,4 +52,35 @@ html {
   color: #fff;
   background-color: #35495e;
 }
+
+.post-title {
+  color: white;
+  background-color: black;
+  padding: 20px;
+  display:flex;
+  align-items:center;
+}
+
+.title {
+  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  display: block;
+  font-weight: 300;
+  font-size: 3em;
+  color: white;
+  letter-spacing: 1px;
+}
+
+.box-container{
+  display:flex;
+  margin:20px;
+  padding:10px;
+  flex-flow:column;
+  border:black solid 0.5px;
+}
+
+h2{
+  margin:20px 0 0 0;
+}
+
 </style>

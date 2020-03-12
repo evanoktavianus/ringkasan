@@ -6,7 +6,7 @@ if (!firebase.apps.length) firebase.initializeApp(process.env.firebaseConfig)
 
 const db=firebase.firestore();
 
-function getDoc(path){
+function getPost(path){
     return db
     .doc(path)
     .get()
@@ -17,4 +17,4 @@ function getDoc(path){
     });
 }
 
-export default {db,getDoc}
+export default {db,getPost}
