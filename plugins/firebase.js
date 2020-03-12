@@ -6,4 +6,15 @@ if (!firebase.apps.length) firebase.initializeApp(process.env.firebaseConfig)
 
 const db=firebase.firestore();
 
-export default db
+function getDoc(path){
+    return db
+    .doc(path)
+    .get()
+    .then(doc => {
+      var post = doc.data();
+      // console.log("returned data from firebase: " + post);
+      return { post: post };
+    });
+}
+
+export default {db,getDoc}

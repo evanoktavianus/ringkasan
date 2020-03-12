@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import db from "~/plugins/firebase";
+import firestore from "~/plugins/firebase";
 
 export default {
   data() {
@@ -26,16 +26,8 @@ export default {
       postImage:"/gDoV6radhkPgedVEm7fv.jpeg"};
   },
   asyncData(context) {
-    console.log(context.params.path);
-    return db
-      .collection("posts")
-      .doc("gDoV6radhkPgedVEm7fv")
-      .get()
-      .then(doc => {
-        var post = doc.data();
-        console.log("returned data from firebase: " + post);
-        return { post: post };
-      });
+    console.log(context.params.path)
+    return firestore.getDoc("posts/gDoV6radhkPgedVEm7fv");
   },
   created() {
     console.log(this.post);
