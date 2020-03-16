@@ -11,10 +11,28 @@ function getPost(path){
     .doc(path)
     .get()
     .then(doc => {
+      if (!doc.exists) {throw "not found"} else {
       var post = doc.data();
       // console.log("returned data from firebase: " + post);
       return { post: post };
+      }
     });
 }
 
-export default {db,getPost}
+function getPosts(path){
+  return db.collection(path).get().then(querySnapshot=>{
+    var posts=[]
+    querySnapshot.forEach(doc=>{
+      var post=doc.data()
+      console.log(post)
+      posts.push(post)
+    })
+    return {posts:posts}
+  })
+}
+
+function savePost(path,post){
+  return db.doc(path).set(post)
+}
+
+export default {db,getPost,savePost,getPosts}

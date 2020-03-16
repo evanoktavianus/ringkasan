@@ -1,15 +1,26 @@
 <template>
-  <div class="container">
-      <h1 class="title">
-        RINGKASAN
-      </h1>
+  <div class="page-container">
+    <h1 class="title">
+      RINGKASAN
+    </h1>
+    <div v-for="post in posts" v-bind:key="post.title" class="post-title">
+      <img v-bind:src="post.image" class="post-image" />
+      <h1>{{ post.title }}</h1>
+    </div>
   </div>
 </template>
 
 <script>
+import firestore from "~/plugins/firebase";
 
 export default {
-}
+  asyncData(context) {
+    return firestore.getPosts("posts");
+  },
+  mounted() {
+    console.log(this.posts);
+  }
+};
 </script>
 
 <style>
@@ -23,8 +34,8 @@ export default {
 }
 
 .title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   display: block;
   font-weight: 300;
   font-size: 100px;

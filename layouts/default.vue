@@ -71,7 +71,7 @@ html {
   letter-spacing: 1px;
 }
 
-.box-container{
+.editor-container{
   display:flex;
   margin:20px;
   padding:10px;
@@ -79,6 +79,14 @@ html {
   border:black solid 0.5px;
 }
 
+.page-container {
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.post-image{
+  height:100%;
+}
 h2{
   margin:20px 0 0 0;
 }
