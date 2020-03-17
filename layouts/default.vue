@@ -1,13 +1,18 @@
 <template>
   <div>
+    <nuxt-link to="/">
+    <div class="header">
+      <h1 class="ringkasan-title">RINGKASAN</h1>
+    </div>
+    </nuxt-link>
     <nuxt />
   </div>
 </template>
 
 <style>
 html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -57,8 +62,8 @@ html {
   color: white;
   background-color: black;
   padding: 20px;
-  display:flex;
-  align-items:center;
+  display: flex;
+  align-items: center;
 }
 
 .ringkasan-title {
@@ -66,20 +71,32 @@ html {
     "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   display: block;
   font-weight: 300;
-  font-size: 3em;
-  color: #35495e;
+  font-size: 1em;
+  color: white;
   letter-spacing: 1px;
-  text-align:center;
+  text-align: center;
   text-decoration: none;
-  padding:20px;
+  background-color:#35495e;
+  padding:10px;
+
+  border: 2px solid #35495e;
+  border-radius: 0 0 10px 10px;
+
 }
 
-.editor-container{
+.header {
+  margin:0px 5px;
   display:flex;
-  margin:20px;
-  padding:10px;
-  flex-flow:column;
-  border:black solid 0.5px;
+  justify-content: center;
+  /* background-color: #35495e; */
+}
+
+.editor-container {
+  display: flex;
+  margin: 20px;
+  padding: 10px;
+  flex-flow: column;
+  border: black solid 0.5px;
 }
 
 .page-container {
@@ -87,11 +104,11 @@ html {
   padding: 10px;
 }
 
-.post-image{
-  width:100%;
-}
-h2{
-  margin:20px 0 0 0;
+.post-image {
+  width: 100%;
 }
 
+a{
+  text-decoration: none;
+}
 </style>

@@ -27,16 +27,12 @@ export default {
         content: process.env.npm_package_description || ""
       }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
+    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" },{ rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Forum&display=swap'}]
   },
-  /*
-   ** Customize the progress-bar color
-   */
-  loading: { color: "#fff" },
   /*
    ** Global CSS
    */
-  css: [],
+  css: ['~/assets/main.css'],
   /*
    ** Plugins to load before mounting the App
    */
@@ -58,5 +54,9 @@ export default {
      ** You can extend webpack config here
      */
     extend(config, ctx) { }
+  },
+  loading: {
+    color: '#85C1E9',
+    height: '5px'
   }
 };

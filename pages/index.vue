@@ -1,20 +1,25 @@
 <template>
   <div class="page-container">
-    <h1 class="ringkasan-title">
-      RINGKASAN
-    </h1>
-    <div v-for="post in posts" v-bind:key="post.title" class="post-title">
-
-      <img v-bind:src="post.image" class="post-image" />
-      <h1>{{ post.title }}</h1>
+    <!-- <div v-for="post in posts" v-bind:key="post.judul" class="post-title">
+      <div class="image-holder">
+        <img v-bind:src="post.image" class="post-image" />
+      </div>
+      <h1>{{ post.judul }}</h1>
+    </div> -->
+    <div v-for="post in posts" v-bind:key="post.judul">
+      <nuxt-link to="/post/corona-virus">
+        <PostHolder v-bind:judul="post.judul" v-bind:ringkasan="post.ringkasan" v-bind:dark="false" />
+      </nuxt-link>
     </div>
   </div>
 </template>
 
 <script>
 import firestore from "~/plugins/firebase";
+import PostHolder from "~/components/PostHolder";
 
 export default {
+  components: { PostHolder },
   asyncData(context) {
     return firestore.getPosts("posts");
   },
@@ -34,7 +39,7 @@ export default {
   text-align: center;
 }
 
-/* .title {
+.title {
   font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   display: block;
@@ -42,7 +47,7 @@ export default {
   font-size: 100px;
   color: #35495e;
   letter-spacing: 1px;
-} */
+}
 
 .subtitle {
   font-weight: 300;

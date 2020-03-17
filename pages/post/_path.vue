@@ -6,11 +6,11 @@
         <img v-bind:src="post.image" class="post-image" />
       </div>
       <div class="title-holder">
-        <h1 class="title">{{ post.title }}</h1>
+        <h1 class="title">{{ post.judul }}</h1>
       </div>
     </div>
     <div class="post-body">
-      <p>{{ post.body }}</p>
+      <p>{{ post.isi }}</p>
     </div>
     <div v-for="doc in post.child" v-bind:key="doc.title" class="post-child">
       <div class="child-title">
