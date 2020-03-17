@@ -1,7 +1,7 @@
 <div class="post-title">
-    <div background-color="blue" class="image-parent"> 
+    <!-- <div background-color="blue" class="image-parent">  -->
         <img src="gDoV6radhkPgedVEm7fv.jpeg" class="image">
-    </div>        
+    <!-- </div>         -->
     <div class="title-parent"> 
         <h1>Coba2</h1>
     </div>
@@ -11,12 +11,13 @@
 
 .post-title{
     display:flex;
-    align-items: stretch;
-    /* align-items: baseline; */
+    /* align-items: stretch; */
+    align-items: center;
+    background-color: black;
 }
 
 .image{
-    height:100%
+    flex:1;
 }
 
 .image-parent{
@@ -25,5 +26,6 @@
 
 .title-parent{
     flex:4;
+    color:white
 }
 </style>

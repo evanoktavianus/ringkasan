@@ -61,14 +61,17 @@ html {
   align-items:center;
 }
 
-.title {
+.ringkasan-title {
   font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   display: block;
   font-weight: 300;
   font-size: 3em;
-  color: white;
+  color: #35495e;
   letter-spacing: 1px;
+  text-align:center;
+  text-decoration: none;
+  padding:20px;
 }
 
 .editor-container{
@@ -85,7 +88,7 @@ html {
 }
 
 .post-image{
-  height:100%;
+  width:100%;
 }
 h2{
   margin:20px 0 0 0;

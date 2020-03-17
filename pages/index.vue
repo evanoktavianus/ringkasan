@@ -1,9 +1,10 @@
 <template>
   <div class="page-container">
-    <h1 class="title">
+    <h1 class="ringkasan-title">
       RINGKASAN
     </h1>
     <div v-for="post in posts" v-bind:key="post.title" class="post-title">
+
       <img v-bind:src="post.image" class="post-image" />
       <h1>{{ post.title }}</h1>
     </div>
@@ -33,7 +34,7 @@ export default {
   text-align: center;
 }
 
-.title {
+/* .title {
   font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   display: block;
@@ -41,7 +42,7 @@ export default {
   font-size: 100px;
   color: #35495e;
   letter-spacing: 1px;
-}
+} */
 
 .subtitle {
   font-weight: 300;

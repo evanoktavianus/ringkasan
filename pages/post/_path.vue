@@ -1,19 +1,24 @@
 <template>
   <div class="page-container">
+    <nuxt-link to="/" class="ringkasan-title">RINGKASAN</nuxt-link>
     <div class="post-title">
-      <img v-bind:src="post.image" class="post-image"/>
-      <h1 class="title">{{ post.title }}</h1>
-    </div>
-    <div class="post-body" >
-      <p>{{post.body}}</p>
-    </div>
-      <div v-for="doc in post.child" v-bind:key="doc.title" class="post-child">
-        <div class="child-title">
-          <h3> {{doc.title}} </h3>
-        </div>
-        {{doc.summary}}
+      <div class="image-holder">
+        <img v-bind:src="post.image" class="post-image" />
+      </div>
+      <div class="title-holder">
+        <h1 class="title">{{ post.title }}</h1>
       </div>
     </div>
+    <div class="post-body">
+      <p>{{ post.body }}</p>
+    </div>
+    <div v-for="doc in post.child" v-bind:key="doc.title" class="post-child">
+      <div class="child-title">
+        <h3>{{ doc.title }}</h3>
+      </div>
+      {{ doc.summary }}
+    </div>
+  </div>
 </template>
 
 <script>
@@ -21,43 +26,47 @@ import firestore from "~/plugins/firebase";
 
 export default {
   data() {
-    return { 
+    return {
       post: {}
-    }
+    };
   },
   asyncData(context) {
-    return firestore.getPost("posts/"+context.params.path)
-    .catch(error=>{
-      console.log("error catched")
-      context.error({statusCode:404,message:'Post not found'})
+    return firestore.getPost("posts/" + context.params.path).catch(error => {
+      console.log("error catched");
+      context.error({ statusCode: 404, message: "Post not found" });
     });
   }
 };
 </script>
 
 <style>
-.post-title {
+/* .post-title {
   color: white;
   background-color: black;
   padding: 20px;
   display:flex;
   align-items:center;
+} */
+.image-holder{
+  flex:1;
+  min-width:150px;
 }
-
+.title-holder{
+  flex:4
+}
 .post-body {
   padding: 20px;
   /* background-color:green; */
 }
 
-.post-child{
+.post-child {
   border: black solid 0.5px;
   margin: 20px 0px;
   padding: 20px;
 }
-.child-title{
+.child-title {
   margin: 0 0 10px 0;
 }
-
 
 .title {
   font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
