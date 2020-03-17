@@ -85,7 +85,7 @@ html {
 }
 
 .header {
-  margin:0px 5px;
+  margin:0px;
   display:flex;
   justify-content: center;
   /* background-color: #35495e; */
@@ -100,8 +100,8 @@ html {
 }
 
 .page-container {
-  margin: 0 auto;
-  padding: 10px;
+  /* margin: 0 auto; 
+  padding: 10px;  */
 }
 
 .post-image {

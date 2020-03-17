@@ -1,56 +1,88 @@
 <template>
-    <div class="post-holder" v-bind:class="[dark ? 'dark':'light']">
-        <div class="image-holder">
-            <img src="/corona-virus.png" class="image-class"/>
-        </div>
-        <div class="title-holder">
-            <h2> {{judul}} </h2>
-            <p> {{ringkasan}} </p>
-        </div>
+  <div class="post-holder" v-bind:class="[dark ? 'dark' : 'light']">
+    <div class="header-holder">
+      <div class="image-holder">
+        <img src="/corona-virus.png" class="image-class" />
+      </div>
+      <div class="title-holder">
+        <h2>{{ judul }}</h2>
+        <p>{{ ringkasan }}</p>
+      </div>
     </div>
+    <div v-if="isi" class="body-holder">
+      <p>{{ isi }}</p>
+      <div class="child-holder">
+      <div v-for="p in child" v-bind:key="p.judul" class="child-class">
+        <h2 class="child-title">{{ p.judul }}</h2>
+        <p>{{ p.ringkasan }}</p>
+      </div>
+    </div>
+    </div>
+  </div>
 </template>
 
 <script>
 export default {
-    props:{judul:String,ringkasan:String,dark:{type:Boolean,default:true}}
-}
+  props: {
+    judul: String,
+    ringkasan: String,
+    isi: String,
+    child: Array,
+    dark: { type: Boolean, default: true }
+  }
+};
 </script>
 
 <style scoped>
+.post-holder {
+  margin: 10px;
+}
+.header-holder {
+  margin: 10px 10px 0 10px;
+  padding: 20px;
+  display: flex;
+  align-items: stretch;
+}
+.child-class {
+  /* border-top: 1px solid red; */
+  margin: 20px 0 0 0;
+}
+.child-title{
+  border-bottom: 1px solid red;
 
-.post-holder{
-    margin:0 20px 20px 0;
-    padding:20px;
-    display:flex;
-    align-items:stretch;
+}
+.child-holder {
+  margin: 20px 0 0 0;
 }
 
 @media screen and (max-width: 300px) {
-  .post-holder {
-    flex-flow:column;
+  .header-holder {
+    flex-flow: column;
   }
 }
 
-
-.dark{
-    background-color:black;
-    color:white
+.dark {
+  background-color: black;
+  color: white;
 }
-.light{
-    border:black solid 0.3px;
-    color:black;
+.light {
+  border: black solid 0.3px;
+  color: black;
 }
-.image-holder{
-    flex:1;
-    margin:auto;
+.image-holder {
+  flex: 1;
+  margin: auto;
+  text-align: center;
 }
-.title-holder{
-    flex:4;
-    padding:0 20px;
+.title-holder {
+  flex: 4;
+  padding: 0 20px;
 }
-.image-class{
-    /* width:100%; */
-        height: 100px;
-
+.image-class {
+  /* width:100%; */
+  height: 100px;
+}
+.body-holder {
+  padding: 20px;
 }
 </style>

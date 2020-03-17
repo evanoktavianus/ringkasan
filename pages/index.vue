@@ -1,11 +1,5 @@
 <template>
   <div class="page-container">
-    <!-- <div v-for="post in posts" v-bind:key="post.judul" class="post-title">
-      <div class="image-holder">
-        <img v-bind:src="post.image" class="post-image" />
-      </div>
-      <h1>{{ post.judul }}</h1>
-    </div> -->
     <div v-for="post in posts" v-bind:key="post.judul">
       <nuxt-link to="/post/corona-virus">
         <PostHolder v-bind:judul="post.judul" v-bind:ringkasan="post.ringkasan" v-bind:dark="false" />
