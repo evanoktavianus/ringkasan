@@ -1,4 +1,6 @@
 <template>
+<div>
+    <LiveUpdate/>
   <div class="post-holder" v-bind:class="[dark ? 'dark' : 'light']">
     <div class="header-holder">
       <div class="image-holder">
@@ -12,17 +14,20 @@
     <div v-if="isi" class="body-holder">
       <p>{{ isi }}</p>
       <div class="child-holder">
-      <div v-for="p in child" v-bind:key="p.judul" class="child-class">
-        <h2 class="child-title">{{ p.judul }}</h2>
-        <p>{{ p.ringkasan }}</p>
+        <div v-for="p in child" v-bind:key="p.judul" class="child-class">
+          <h2 class="child-title">{{ p.judul }}</h2>
+          <p>{{ p.ringkasan }}</p>
+        </div>
       </div>
     </div>
-    </div>
   </div>
+</div>
 </template>
 
 <script>
+import LiveUpdate from "~/components/LiveUpdate";
 export default {
+  components: { LiveUpdate },
   props: {
     judul: String,
     ringkasan: String,
@@ -35,11 +40,11 @@ export default {
 
 <style scoped>
 .post-holder {
-  margin: 10px;
+  margin: 0 10px 10px 10px;
+  padding: 10px;
 }
 .header-holder {
-  margin: 10px 10px 0 10px;
-  padding: 20px;
+  margin: 0px 10px 0 10px;
   display: flex;
   align-items: stretch;
 }
@@ -47,18 +52,11 @@ export default {
   /* border-top: 1px solid red; */
   margin: 20px 0 0 0;
 }
-.child-title{
+.child-title {
   border-bottom: 1px solid red;
-
 }
 .child-holder {
   margin: 20px 0 0 0;
-}
-
-@media screen and (max-width: 300px) {
-  .header-holder {
-    flex-flow: column;
-  }
 }
 
 .dark {
@@ -84,5 +82,16 @@ export default {
 }
 .body-holder {
   padding: 20px;
+}
+
+@media screen and (max-width: 300px) {
+  .header-holder {
+    flex-flow: column;
+    padding: 0;
+  }
+  .title-holder {
+    flex: 4;
+    padding: 0;
+  }
 }
 </style>

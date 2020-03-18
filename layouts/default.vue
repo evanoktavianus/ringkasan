@@ -6,7 +6,7 @@
         <!-- <p> Berita Terstruktur Berbasis Keilmuan </p> -->
       </div>
     </nuxt-link>
-    <h5 style="text-align:center;margin:0 0 40px 0">Berita Terstruktur Berbasis Keilmuan</h5>
+    <h5 style="text-align:center;margin:0 0 30px 0">Berita Terstruktur Berbasis Keilmuan</h5>
     <h1></h1>
     <nuxt />
   </div>

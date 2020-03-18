@@ -1,0 +1,4 @@
+#
+git pull
+yarn
+pm2 reload npm
