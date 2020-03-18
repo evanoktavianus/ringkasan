@@ -1,10 +1,13 @@
 <template>
   <div>
     <nuxt-link to="/">
-    <div class="header">
-      <h1 class="ringkasan-title">RINGKASAN</h1>
-    </div>
+      <div class="header">
+        <h1 class="ringkasan-title">RINGKASAN</h1>
+        <!-- <p> Berita Terstruktur Berbasis Keilmuan </p> -->
+      </div>
     </nuxt-link>
+    <h5 style="text-align:center;margin:0 0 40px 0">Berita Terstruktur Berbasis Keilmuan</h5>
+    <h1></h1>
     <nuxt />
   </div>
 </template>
@@ -76,17 +79,16 @@ html {
   letter-spacing: 1px;
   text-align: center;
   text-decoration: none;
-  background-color:#35495e;
-  padding:10px;
+  background-color: #95212c;
+  padding: 10px;
 
-  border: 2px solid #35495e;
+  border: 2px solid #95212c;
   border-radius: 0 0 10px 10px;
-
 }
 
 .header {
-  margin:0px;
-  display:flex;
+  margin: 0px;
+  display: flex;
   justify-content: center;
   /* background-color: #35495e; */
 }
@@ -108,7 +110,7 @@ html {
   width: 100%;
 }
 
-a{
+a {
   text-decoration: none;
 }
 </style>

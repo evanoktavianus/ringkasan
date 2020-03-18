@@ -6,7 +6,7 @@
       </div>
       <div class="title-holder">
         <h2>{{ judul }}</h2>
-        <p>{{ ringkasan }}</p>
+        <v-html>{{ ringkasan }}</v-html>
       </div>
     </div>
     <div v-if="isi" class="body-holder">
@@ -66,7 +66,7 @@ export default {
   color: white;
 }
 .light {
-  border: black solid 0.3px;
+  border: lightgrey solid 0.3px;
   color: black;
 }
 .image-holder {
