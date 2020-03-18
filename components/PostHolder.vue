@@ -42,6 +42,7 @@ export default {
 .post-holder {
   margin: 0 10px 10px 10px;
   padding: 10px;
+  background-color:white;
 }
 .header-holder {
   margin: 0px 10px 0 10px;
